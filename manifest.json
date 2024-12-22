@@ -1,0 +1,32 @@
+{
+	"name": "TDS Home",
+	"short_name": "TDS Home",
+	"description": "TDS homepage",
+	"icons": [
+		{
+			"src": "images/manifest/logo48.svg",
+			"type": "image/svg+xml",
+			"sizes": "any"
+		},
+		{
+			"src": "images/manifest/logo48.png",
+			"type": "image/png",
+			"sizes": "48x48 56x56"
+		},
+		{
+			"src": "images/manifest/logo192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "images/manifest/logo512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "white",
+	"background_color": "white"
+}

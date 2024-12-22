@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>TDS Homepage</title>
+	<meta name="description"
+		content="Inspection tool">
+
+	<base href="/">
+
+	<link href="images/manifest/logo48.png"
+		type="image/png"
+		rel="icon">
+
+	<link href="manifest.json"
+		rel="manifest">
+
+	<meta name="theme-color"
+		content="#3f51b5">
+
+	<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+	<meta name="mobile-web-app-capable"
+		content="yes">
+	<meta name="application-name"
+		content="TDS">
+
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable"
+		content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style"
+		content="black-translucent">
+	<meta name="apple-mobile-web-app-title"
+		content="TDS">
+
+	<!-- Homescreen icons -->
+	<link href="images/manifest/icon-48x48.png"
+		rel="apple-touch-icon">
+	<link href="images/manifest/icon-72x72.png"
+		rel="apple-touch-icon"
+		sizes="72x72">
+	<link href="images/manifest/icon-96x96.png"
+		rel="apple-touch-icon"
+		sizes="96x96">
+	<link href="images/manifest/icon-144x144.png"
+		rel="apple-touch-icon"
+		sizes="144x144">
+	<link href="images/manifest/icon-192x192.png"
+		rel="apple-touch-icon"
+		sizes="192x192">
+
+	<!-- Tile icon for Windows 8 (144x144 + tile color) -->
+	<meta name="msapplication-TileImage"
+		content="images/manifest/icon-144x144.png">
+	<meta name="msapplication-TileColor"
+		content="#3f51b5">
+	<meta name="msapplication-tap-highlight"
+		content="no">
+
+
+		<script>
+			
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", function () {
+					navigator.serviceWorker.register("service-worker.js", { scope: "/", });
+				});
+			}
+	
+			let userAgentString = navigator.userAgent;
+			let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+			let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
+			let safariAgent = userAgentString.indexOf("Safari") > -1;
+				  
+			// Discard Safari since it also matches Chrome
+			if ((chromeAgent) && (safariAgent)) 
+				safariAgent = false;
+	 
+			let operaAgent = userAgentString.indexOf("OP") > -1;
+				  
+			// Discard Chrome since it also matches Opera     
+			if ((chromeAgent) && (operaAgent)) 
+				chromeAgent = false;
+	
+			if (!chromeAgent) {
+				let scr0 = document.createElement("script");
+				
+				scr0.onload = ()=>{
+					let scr = document.createElement("script");
+					//scr.async = true;
+					scr.src = "/scripts/app.js";
+					document.body.appendChild(scr);
+				}
+				scr0.src = "adoptedStyleSheets.js";
+				document.head.appendChild(scr0);
+				
+			}
+			 else {
+				let scr = document.createElement("script");
+				scr.async = true;
+				scr.src = "/scripts/app.js";
+				document.head.appendChild(scr);
+			}
+		</script>
+
+
+
+	<style id="st">
+		body {
+			margin: 0;
+			font-family: "Open Sans", sans-serif;
+			font-size: 18px;
+			min-height: 100vh;
+			-webkit-font-smoothing: antialiased;
+    		-moz-osx-font-smoothing: grayscale;
+			overflow-x: hidden;
+		}
+	</style>
+	<style id="fonts">
+		
+		/* latin-ext */
+		@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 300;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 300;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+		
+		/* latin-ext */
+		@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 400;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 400;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+		
+		/* latin-ext */
+		@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 600;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 600;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+		
+		/* latin-ext */
+		@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 800;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 800;
+		font-stretch: 100%;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+</head>
+
+<body>
+
+	<style id="styles"></style>
+	<tds-app></tds-app>
+	<noscript>
+		Please enable JavaScript to view this website.
+	</noscript>
+</body>
+
+</html>
